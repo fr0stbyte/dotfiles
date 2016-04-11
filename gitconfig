@@ -1,0 +1,11 @@
+[user]
+	email = radu.brumariu@gmail.com
+	name = Radu Brumariu
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+        ribbon = tag --force _ribbon origin/master
+        catchup = log --color --reverse --topo-order _ribbon..origin/master
+[push]
+	default = matching
+[core]
+	excludesfile = /Users/radu/.gitignore_global
