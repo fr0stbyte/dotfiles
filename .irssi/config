@@ -123,7 +123,11 @@ channels = (
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#traffic-server"; chatnet = "FreeNode"; autojoin = "no"; },
   { name = "#scala"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#performance"; chatnet = "Groupon"; autojoin = "yes"; }
+  { name = "#zipkin"; chatnet = "FreeNode"; autojoin = "no"; },
+  { name = "#performance"; chatnet = "Groupon"; autojoin = "no"; }
+  { name = "#kernel"; chatnet = "FreeNode"; autojoin = "yes"; }
+  { name = "##c"; chatnet = "FreeNode"; autojoin = "yes"; }
+
 );
 
 aliases = {
@@ -305,7 +309,7 @@ ignores = (
   { mask = "JOINS"; level = "PARTS QUITS NICKS"; },
   {
     level = "JOINS PARTS QUITS NICKS";
-    channels = ( "#graphite", "#ruby" );
+    channels = ( "#graphite", "#ruby", "#scala", "#zipkin" );
   },
   { level = "ALL"; channels = ( "#graphite", "" ); },
   { level = "JOINS PARTS QUITS NICKS"; }

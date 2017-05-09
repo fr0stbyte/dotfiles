@@ -11,19 +11,23 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'Erlang-plugin-package'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'nerdtree'
 Plugin 'supertab'
 Plugin 'syntastic'
 Plugin 'Scala-Java-Edit'
 Plugin 'Scheme-Mode'
 Plugin 'Solarized'
 Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
+Plugin 'Tagbar'
 call vundle#end()
 
 " allow easier buffer switching -- even if the buffer is modified
 set hidden
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
+
+"tagbar
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
 filetype plugin indent on
 
@@ -36,8 +40,9 @@ filetype plugin indent on
 
 " Solarized
 syntax on
-set background=dark
-let g:solarized_termcolors=256
+" set background=dark
+let g:solarized_style="dark"
+let g:solarized_contrast="high"
 colorscheme solarized
 
 set history=700
@@ -83,6 +88,10 @@ augroup markdown
   au BufNewFile, BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
-set tags=./.tags,.tags,./tags,tags
+set tags=./.tags,.tags,./tags,tags;/
 
+let g:airline_symbols = {}
 let g:airline_symbols.branch = "\uf020"
+
+" remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
